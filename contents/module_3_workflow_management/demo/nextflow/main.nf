@@ -14,7 +14,7 @@ params.outdir = (params.outdir ?: 'results')
 params.data_url = (params.data_url ?: 'https://data.stadt-zuerich.ch/dataset/bev_vornamen_baby_od3700/download/BEV370OD3700.csv')
 
 workflow {
-  def report_files = [file('4_report.qmd')]
+  def report_files = [file('Testproject.qmd')]
   def bibliography = file('references.bib')
   if (bibliography.toFile().exists()) {
     report_files << bibliography
@@ -93,20 +93,20 @@ process FINAL_REPORT {
   tuple path("3_top_names.csv"), path("3_selected_names.csv")
 
   output:
-  path "4_report.html"
+  path "Testproject.html"
 
   script:
   // Render outside the repo so Quarto does not inherit the website project.
   """
   workdir=\$(pwd)
   tmpdir=\$(mktemp -d)
-  cp 4_report.qmd 1_names_clean.csv 2_yearly_winners.csv \
+  cp Testproject.qmd 1_names_clean.csv 2_yearly_winners.csv \
     3_top_names.csv 3_selected_names.csv "\$tmpdir/"
   if [ -f references.bib ]; then
     cp references.bib "\$tmpdir/"
   fi
   cd "\$tmpdir"
-  quarto render 4_report.qmd --to html --output 4_report.html
-  cp 4_report.html "\$workdir/"
+  quarto render Testproject.qmd --to html --output Testproject.html
+  cp Testproject.html "\$workdir/"
   """
 }
