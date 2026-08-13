@@ -11,7 +11,7 @@ Something something about the workshop. Just a change to commit.
 ![Snakemake](https://img.shields.io/badge/Snakemake-039475?style=flat-square)
 ![Nextflow](https://img.shields.io/badge/Nextflow-0DC09D?style=flat-square&logo=nextflow&logoColor=white)
 
-Part of the [OPeR-RA workshop series](https://www.swissrn.org/contents/activities/operra/).
+of the [OPeR-RA workshop series](https://www.swissrn.org/contents/activities/operra/).
 
 As part of this workshop you will fork this repository and turn it into a small
 but complete reproducible project: a dynamic report generated from real data, an
